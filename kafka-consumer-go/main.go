@@ -169,6 +169,7 @@ func insertVehiclePostgres(db *sql.DB, v Vehicle) error {
 }
 
 func insertAppointmentPostgres(db *sql.DB, a Appointment) error {
+	fmt.Println("Inserindo appointment no PostgreSQL...")
 	query := `INSERT INTO _messages.appointments (id, vehicle_id, lat, long, process_date)
               VALUES ($1, $2, $3, $4, $5)
               ON CONFLICT (id) DO NOTHING;`
